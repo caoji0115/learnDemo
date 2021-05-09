@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>心跳</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      background: #1e1e1e;
+    }
+
+    .main {
+      /* /* margin: 00px auto; */
+      padding: 200px 0 0 0;
+
+      width: 400px;
+      height: 400px;
+      background: #1e1e1e;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: scale(1.0);
+      transition: all 0.5s;
+      z-index: 999;
+    }
+
+    .left {
+      width: 160px;
+      height: 230px;
+      background: rgb(236, 136, 136);
+      border-radius: 80px 80px 0 0;
+      transform: rotate(-45deg) translateX(77.5px);
+    }
+
+    .right {
+      width: 160px;
+      height: 230px;
+      background: rgb(236, 136, 136);
+      border-radius: 80px 80px 0 0;
+      transform: rotate(45deg) translateX(-77.5px);
+    }
+
+    .jump {
+      transform: scale(1.1);
+      transition: all 0.5s;
+    }
+
+    .line_arrow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: transparent;
+      transform: rotate(341deg) translateY(-230px) translateX(250px) scale(1.0);
+      transition: all 0.5s;
+      /* height: 20px;
+      width: 200px; */
+    }
+
+    .line {
+      z-index: 1;
+      height: 2.5px;
+      width: 100px;
+      background: #fafafa;
+      transform: rotate(341deg) translateY(-183px) translateX(72px)  scale(1.0);
+      transition: all 0.5s;
+    }
+
+    .line2 {
+      height: 2px;
+      width: 150px;
+      background: red;
+    }
+
+    .arrow {
+      background: transparent;
+      width: 0;
+      height: 0;
+      border: 10px solid;
+      border-color: transparent transparent transparent red;
+    }
+  </style>
+</head>
+
+<body onload="Jump()">
+<body>
+
+  <div class="main" id="mian">
+    <div class="left"></div>
+    <div class="right"></div>
+  </div>
+  <!-- <div class="line"></div>
+  <div class="line_arrow">
+    <div class="line2"></div>
+    <div class="arrow"></div>
+  </div> -->
+
+  <script>
+    let Jump = () => {
+      let main = document.querySelector('.main')
+      let line = document.querySelector('.line')
+      let line_arrow = document.querySelector('.line_arrow')
+      let num = 1
+      setInterval(() => {
+        num += 1
+        if (num % 2 == 0) {
+          main.className = ('main jump');
+          line_arrow.className = ('line_arrow jump');
+          line.className = ('line jump');
+        } else {
+          main.className = ('main');
+          line_arrow.className = ('line_arrow');
+          line.className = ('line');
+        }
+        if (num > 10) {
+          num = 1
+        }
+      }, 500)
+    }
+  </script>
+</body>
+
+</html>

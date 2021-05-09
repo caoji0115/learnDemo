@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>纯css3 动画实现打字效果</title>
+
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+    }
+
+    /* 
+    @keyframes blink-caret {
+      50% {
+        border-color: transparent;
+      }
+    } */
+
+    h1 {
+      font: bold 200% Consolas, Monaco, monospace;
+      border-right: .1em solid;
+      width: 100%;
+      /* 动画定义长度  此也就是h1标签长度 */
+      /* width: 75ch; */
+      /* # of chars */
+      margin: 2em 1em;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 5s steps(70, end) infinite
+    }
+  </style>
+</head>
+
+<body>
+  <h1> 嗨！大家好 我是老王 ，但不是隔壁老王，今天给大家分享的就是纯C3实现打字效果。。。</h1>    
+</pre>
+
+</body>
+
+</html>
